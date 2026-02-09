@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #00f2ff; /* Màu Neon Cyan */
+    --secondary-color: #7000ff; /* Màu Tím */
+    --bg-color: #0a0b1e; /* Xanh đen sâu */
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Bungee', cursive; /* Font chữ kiểu game thủ */
+    font-size: 3rem;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.btn-play {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-weight: bold;
+}
+
+.btn-play:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--primary-color);
+}
