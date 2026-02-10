@@ -1,19 +1,38 @@
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-</head>
-<body class="arena-bg">
-    <div class="game-header">
-        <div id="player-score">Bạn: 0</div>
-        <div id="timer">15</div>
-        <div id="opponent-score">Đối thủ: 0</div>
-    </div>
-
-    <div class="question-container">
-        <div id="math-question"></div> <div class="options-grid" id="options">
+<div class="arena-wrapper">
+    <div class="battle-header">
+        <div class="player cyan">
+            <div class="avatar"></div>
+            <div class="info">
+                <span>Bạn: MathKing99</span>
+                <div class="hp-bar"><div class="fill" style="width: 80%"></div></div>
             </div>
+        </div>
+        
+        <div class="timer-hex">15</div>
+
+        <div class="player pink">
+            <div class="info">
+                <span>Đối thủ: LogicMaster</span>
+                <div class="hp-bar"><div class="fill" style="width: 60%"></div></div>
+            </div>
+            <div class="avatar"></div>
+        </div>
     </div>
 
-    <script src="../js/question-gen.js"></script>
-    <script src="../js/socket-game.js"></script>
-</body>
+    <div class="question-card">
+        <div class="question-header">
+            <i class="icon-crown"></i>
+            <span>Tính giá trị biểu thức:</span>
+        </div>
+        <div id="math-question">
+            $$\sqrt{16} + 3^2 - [x - 5]$$
+        </div>
+    </div>
+
+    <div class="options-grid">
+        <button class="opt-btn"><span>A: 8</span></button>
+        <button class="opt-btn"><span>B: 4</span></button>
+        <button class="opt-btn"><span>C: 6</span></button>
+        <button class="opt-btn"><span>D: 10</span></button>
+    </div>
+</div>
