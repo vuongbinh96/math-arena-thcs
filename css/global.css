@@ -1,36 +1,107 @@
 :root {
-    --primary-color: #00f2ff; /* Màu Neon Cyan */
-    --secondary-color: #7000ff; /* Màu Tím */
-    --bg-color: #0a0b1e; /* Xanh đen sâu */
-    --text-color: #ffffff;
+    --cyan: #00f2ff;
+    --pink: #ff0055;
+    --dark-blue: #0a0b1e;
+    --card-bg: rgba(16, 18, 39, 0.8);
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(circle, #1a1b3a 0%, #050510 100%);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
 }
 
-h1 {
-    font-family: 'Bungee', cursive; /* Font chữ kiểu game thủ */
-    font-size: 3rem;
-    text-shadow: 0 0 10px var(--primary-color);
+/* Khung bọc ngoài */
+.arena-wrapper {
+    width: 900px;
+    padding: 20px;
 }
 
-.btn-play {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border: none;
-    padding: 20px 40px;
-    font-size: 1.5rem;
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.2s;
+/* Thanh Header đối kháng */
+.battle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: var(--card-bg);
+}
+
+.player.cyan { border-color: var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+.player.pink { border-color: var(--pink); box-shadow: 0 0 15px var(--pink); }
+
+.hp-bar {
+    width: 150px;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.cyan .fill { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.pink .fill { background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+
+/* Đồng hồ đếm ngược hình lục giác */
+.timer-hex {
+    font-size: 2rem;
     font-weight: bold;
+    color: var(--pink);
+    border: 3px solid var(--pink);
+    padding: 15px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: var(--card-bg);
 }
 
-.btn-play:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--primary-color);
+/* Thẻ câu hỏi */
+.question-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#math-question {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Nút đáp án bo tròn kiểu bầu dục */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.opt-btn {
+    background: linear-gradient(180deg, #162447 0%, #1b1b2f 100%);
+    border: 2px solid var(--cyan);
+    color: white;
+    padding: 25px;
+    border-radius: 50px; /* Làm nút thành hình bầu dục */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opt-btn:hover {
+    background: var(--cyan);
+    color: #000;
+    box-shadow: 0 0 30px var(--cyan);
+    transform: translateY(-5px);
 }
